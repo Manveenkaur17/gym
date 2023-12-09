@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="icofont/icofont.min.css">
+  <link rel="stylesheet" type="text/css"  src=  "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap">
+  <link rel="stylesheet" href="icofont/icofont.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <style type="text/css">
+    .img11:hover{transform: scale(1.02);
+    }
+   .btn1{
+    margin-top: 20px;
+    background-color:transparent;border: 2px solid #1BCDEF;
+    color: #1BCDEF;padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;}
+.btn1:hover{background-color: #1BCDEF;
+color:#fff
+}
+
+.main{
+
+  position:relative;
+  height:100vh;
+  width:100%;
+  color:#fff;
+}
+.main .slider{
+  position:relative;
+  height:100vh;
+  width:100%;
+}
+.main .slider .slides{
+  position:absolute;
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  opacity:0;
+  transition:0.3s ease-in-out;
+}
+.main .slider .slides.current{
+  z-index:1;
+  opacity:1;
+}
+.main .slider .slides:nth-child(1){
+  background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)),url('p6.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.main .slider .slides:nth-child(2){
+  background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)),url('p1.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.main .slider .slides:nth-child(3){
+  background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)),url('p21.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.main .slider .slides:nth-child(4){
+  background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)),url('p3.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.main .slider .slides:nth-child(5){
+  background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)),url('p4.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.main .slider .slides h1{
+  font-size:3em;
+  font-weight:600;
+  text-shadow:0px 0.5px 12px rgba(0, 0, 0, 0.9);
+  margin-left:-500%;
+  transition:0.3s linear;
+}
+.main .slider .slides.current h1{
+  animation:animateHeading 0.3s linear forwards 1;
+  animation-delay:0.2s;
+}
+@keyframes animateHeading{
+  to{
+    margin-left:0;
+  }
+}
+.main .slider .slides p{
+  text-shadow:0px 0.5px 5px rgba(0, 0, 0, 0.5);
+  margin-right:-500%;
+  transition:0.3s linear;
+}
+.main .slider .slides.current p{
+  animation:animateparagraph 0.3s linear forwards 1;
+  animation-delay:0.2s;
+}
+@keyframes animateparagraph{
+  to{
+    margin-right:0;
+  }
+}
+.main .prev{
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:5%;
+  transform:translateY(-50%);
+  z-index:99;
+  font-size:1.5em;
+  font-weight:600;
+  border:2px solid #fff;
+  padding:10px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:0.2s ease-in-out;
+  cursor:pointer;
+  box-shadow:0px 2px 15px rgba(0, 0, 0, 0.9);
+}
+.main .next{
+  position:absolute;
+  color:#fff;
+  top:50%;
+  right:5%;
+  transform:translateY(-50%);
+  z-index:99;
+  font-size:1.5em;
+  font-weight:600;
+  border:2px solid #fff;
+  padding:10px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:0.2s ease-in-out;
+  cursor:pointer;
+  box-shadow:0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.main .prev:hover,
+.main .next:hover{
+  background:#1BCDEF;
+  border-color:#1BCDEF;
+}
+.main a{
+  position:fixed;
+  color:#fff;
+  bottom:15%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:99;
+  font-size:1em;
+  font-weight:500;
+  border:1px solid #16a;
+  padding:10px 17px;
+  line-height:1.2em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:2px;
+  transition:0.2s ease-in-out;
+  cursor:pointer;
+  text-decoration:none;
+  background:#16a;
+  box-shadow:0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.main a:hover{
+  background:#017fb5;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .main1{background-image: url('p2.jpg'); /* Replace with the actual path to your photo */
+       background-size:cover;
+      background-position: center;
+
+
+      }
+    .row1 {
+      
+      height: 400px;
+      
+        /* Set a fixed height for the row */
+       background:  rgb(27, 205, 239,0.70)
+     }
+
+   
+      
+  
+       
+      
+    
+  </style>
+
+</head>
+<body>
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>full screen animated slider using html css and jquery</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+    <i style="font-size:25px;"class=" icofont-muscle-weight text-white pt-1 ps-2 pb-2 pe-1 "></i>
+  <a class="navbar-brand text-white" href="#"><h1  style="font-size: 22px;">
+    <span style="color: #1BCDEF;">FITNESS</span>
+    <span style="">MANSION</span>
+  </h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a style="margin-left:200px;font-size: 20px;" class="nav-item nav-link active text-white" href="index1.html">Home</a>
+      <a style="margin-left:60px;font-size: 20px;"  class="nav-item nav-link active text-white" href="aboutus.html">About Us</a>
+      <a style="margin-left:60px;font-size: 20px;" class="nav-item nav-link text-white" href="contact.html">Contact Us</a>
+      <a style="margin-left:60px;font-size: 20px;" class="nav-item nav-link text-white" href="register1.html">Register</a>
+      <a style="margin-left:60px;font-size: 20px;" class="nav-item nav-link text-white" href="loginpage.html">Login</a>
+    </div>
+  </div>
+</nav>
+  <div class="main ">
+    <div class="slider" id="slider">
+      <div class="slides current">
+        <h2 style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF">SLIDE INTO FITNESS EXCELLENCE!</h2>
+        <p style="font-size:30px;" class="pt-5 text-center display-1 text-white " >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="slides">
+        <h2 style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF">ELEVATE YOUR WORKOUTS WITH OUR SLIDERS!</h2>
+        <p style="font-size:30px;" class="pt-5 text-center display-1 text-white " >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="slides">
+        <h2 style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF">UNLEASH STRENGTH WITH GLIDEFIT SLIDERS!</h2>
+        <p style="font-size:30px;" class="pt-5 text-center display-1 text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="slides">
+        <h2 style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF">SMOOTH MOVES, STRONG RESULTS</h2>
+        <p style="font-size:30px;" class="pt-5 text-center display-1 text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="slides slidelast">
+        <h2 style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF">SLIDE YOUR WAY TO A SCULPTED BODY!</h2>
+        <p style="font-size:30px;" class="pt-5 text-center display-1 text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <i class="fa icofont-arrow-left prev" id="prev"></i>
+    <i class=" fa icofont-arrow-right next" id="next"></i>
+    
+  </div>
+  <!--....................-->
+  <div class="row p-5">
+    <div class="col-7 mt-4 mb-4">
+      <h4 style="color:BLACK;font-size: 20px;letter-spacing:2px;">MY VIDEO</h4>
+      <h1 style="color: #1BCDEF ;letter-spacing:4px;font-size:50px;margin-top:15px;margin-bottom:15px;">NEW EXERCISE</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmoder<br>
+      tem incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniana<br>
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      con
+      <br>
+      <button style="font-size:12px;margin-top:30px;pa"type="button" class="btn btn-dark lg rounded-pill ps-5 pe-5 pt-2 pb-2 ">READ MORE</button>
+    </div>
+      <div class="col-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Osd4DLpMNp4?si=9OlpuewzfiXjbmMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+  </div>
+
+
+
+
+  <!--....................--> 
+  <div class="row" style="background-image: url('p8.jpg'); background-size: cover; height: 700px;">
+    <div class="col-12 pt-5" style="">
+      <p class="pt-4 text-center display-5  "style="margin-bottom:-50px;font-weight:bold; color:#1BCEDF"> WHO ARE WE?</p>
+      <h1 style="font-size:80px;" class="pt-5 text-center display-1 text-white "  > Know more about us</h1>
+      <center><button  class="custom-button btn1"><a style="text-decoration:none;color:white"href="aboutus.html">About Us</a></button></center>
+
+
+   
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <!--....................--> 
+
+
+
+
+
+
+
+
+<div class="main1  ">
+  <div class="row row1 p-5 ">
+    <div class="col-3 text-white">
+      <i style="font-size:70px;"  class=" logos icofont-brain-alt  p-2 m-2 "></i>
+      <h4>BODY AND MIND</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+
+    </div>
+    <div class="col-3 text-white ">
+      <i style="font-size:70px;"  class=" logos icofont-medicine  p-2 m-2 "></i>
+      <h4>HEALTH AND LIFE</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    </div>
+    <div class="col-3 text-white">
+      <i style="font-size:70px;"  class=" logos icofont-paper  p-2 m-2 "></i>
+      <h4>PLANNING</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    </div>
+    <div class="col-3 text-white">
+      <i style="font-size:70px;"  class="logos icofont-gym  p-2 m-2 "></i>
+      <h4>WORKOUT</h4>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    </div>
+  </div>
+</div>
+
+<!--....--->
+<div class="row">
+  <div class="col-4">
+
+    <a href="z1.jpg"><img src="z1.jpg" class="img11" style=" height: 400px;"></a>
+    </div>
+      <div class="col-4">
+        <a href="z2.jpg"><img src="z2.jpg" class="img11" style=" height: 400px;"></a>
+      </div>
+      <div class="col-4">
+        <a href="z3.jpg"><img src="z3.jpg" class="img11" style=" height: 400px;"></a>
+      </div>
+    </div>
+    <div class="row">
+  <div class="col-4">
+    <a href="z4.jpg"><img src="z4.jpg" class="img11" style=" height: 400px;"></a>
+    </div>
+      <div class="col-4">
+        <a href="z5.jpg"><img src="z5.jpg" class="img11" style=" height: 400px;"></a>
+      </div>
+      <div class="col-4">
+        <a href="z6.jpg"><img src="z6.jpg" class="img11" style=" height: 400px;"></a>
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+  
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+ 
+  prevBtn.addEventListener("click",function(){
+    prevSlide();
+ });
+  nextBtn.addEventListener("click",function(){
+    nextSlide();
+ });
+  
+}
+let slideNumber = 0;
+const prevSlide = () =>{
+  const slides = document.getElementsByClassName('slides');
+const slider = document.getElementById("slider");
+  const currentSlide = slider.getElementsByClassName('current');
+  currentSlide[0].classList.remove("current");
+  if(slideNumber == 0){
+    slideNumber = slides.length-1;
+  }
+  else{
+      slideNumber = slideNumber-1;
+  }
+  slides[slideNumber].classList.add("current");
+}
+const nextSlide = () =>{
+  const slides = document.getElementsByClassName('slides');
+const slider = document.getElementById("slider");
+  const currentSlide = slider.getElementsByClassName('current');
+  currentSlide[0].classList.remove("current");
+  if(slideNumber == (slides.length-1)){
+    slideNumber = 0;
+  }
+  else{
+      slideNumber = slideNumber+1;
+  }
+  slides[slideNumber].classList.add("current");
+}
+</script>
+
+<div class="row bg-dark text-light p-5">
+      
+ <div class="col-12  ">
+
+        <h1  style="font-family: 'Comfortaa';font-size: 22px;">
+    <span style="color:#1BCDEF;">FITNESS</span>
+    <span style="">MANSION</span>
+  </h1>
+    <div></div>
+     <div class="row bg-dark text-light">
+      <div class="col-3">
+        <p style="font-size:20px; margin-bottom:0;">Address</p>
+
+  <i class=" icofont-location-pin  ">112-A Westwood,london</i></br>
+  <i class="icofont-email ">mail@domain</i></br>
+  <i class="icofont-phone">+123 4567890</i>
+  <br>
+</div>
+
+<div class="col-3">
+  <p style="font-size:20px;margin-bottom:0;">Quicklinks</p>
+  <ul>
+    <li>Home</li>
+    <li>Blog</li>
+    <li>About</li>
+    <li>Gallery</li>
+  </ul>
+</div>
+<div class="col-3">
+  <p style="font-size:20px;margin-bottom:0;">Timings</p>
+  <table>
+    <tr>
+      <td>Mon</td><td>9:00AM-8:00PM</td>
+    </tr>
+    <tr>
+      <td>Tue</td><td>9:00AM-8:00PM</td>
+    </tr>
+    <tr>
+      <td>Wed</td><td>9:00AM-8:00PM</td>
+    </tr>
+    <tr>
+      <td>Thurs</td><td>9:00AM-8:00PM</td>
+    </tr>
+    <tr>
+      <td>Fri</td><td>9:00AM-8:00PM</td>
+    </tr>
+    <tr>
+      <td>Sat</td><td>9:00AM-4:00PM</td>
+    </tr>
+    </table>
+</div>
+<div class="col-3">
+  <p style="font-size:20px;margin-bottom:0;">Map</p>
+  
+  <iframe style="height:200px;width:400px;padding:20px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.60639793024!2d-0.43123880712176205!3d51.52860702090687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1696264638761!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>
